@@ -1,0 +1,14 @@
+module prim_clock_gating (
+  input  logic clk_i,
+  input  logic en_i,
+  input  logic test_en_i,
+  output logic clk_o
+);
+  logic en_latch;
+  always_latch begin
+    if (!clk_i) begin
+      en_latch = en_i | test_en_i;
+    end
+  end
+  assign clk_o = clk_i & en_latch;
+endmodule
