@@ -6,7 +6,8 @@ foreach file [glob ${rtl_dir}/*_pkg.sv] {
 }
 
 # 2. Explicit files: black-box stub and compressed decoder
-analyze -format sverilog ${rtl_dir}/prim_ram_2p_bbox.sv -define SYNTHESIS
+# analyze -format sverilog ${rtl_dir}/prim_ram_2p_bbox.sv -define SYNTHESIS
+analyze -format sverilog ${rtl_dir}/prim_ram_2p.sv -define SYNTHESIS
 analyze -format sverilog ${rtl_dir}/ibex_compressed_decoder.sv -define SYNTHESIS
 
 # 3. Compile ibex core files (skip compressed decoder, already done above)

@@ -33,11 +33,10 @@ foreach f $FREQS {
     create_clock -name sys_clk -period $period [get_ports clk_sys_i]
 
     # Load UPF for Low Power BEFORE compiling
-    # UPF not working as of 06-MAR, need to implement
-    #load_upf ./power/ibex_power.upf
+    #load_upf ../power/ibex_power.upf
 
     # Black box prim_ram_2p — stub has no internal logic
-    set_dont_touch [get_designs prim_ram_2p*]
+    # set_dont_touch [get_designs prim_ram_2p*]
 
     # Compile the design
     source -echo -verbose $script_dir/dc_compile.tcl

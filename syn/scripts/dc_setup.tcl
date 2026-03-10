@@ -125,9 +125,8 @@ set sub_mwlib_type "saed32nm_?vt_* saed32sram_lp saed32io_wb_* SAED32_PLL_FR*"
 # --------------------------------------------------
 # Project directories
 # --------------------------------------------------
-file mkdir ./work        ← stays at syn/work/
-file mkdir ../reports    ← goes to FINAL_REPO_ROOT/reports/
-file mkdir ../outputs    ← goes to FINAL_REPO_ROOT/outputs/
-file mkdir ../logs       ← goes to FINAL_REPO_ROOT/logs/
+file mkdir ../work
+file mkdir ../reports
+file mkdir ../outputs
 
 puts "INFO: DC setup complete for ${top_design}"
